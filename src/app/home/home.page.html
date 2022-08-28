@@ -44,5 +44,14 @@
       </span>
     </div>
 
+    <section class="margin-top-20">
+      <ion-button expand="block" (click)="solveClick()">Solve</ion-button>
+    </section>
+
+    <div *ngIf="path && path.length">
+      <ul class="no-decoration">
+        <li *ngFor="let p of path">{{ p }} = {{ p | evaluate }}</li>
+      </ul>
+    </div>
   </div>
 </ion-content>

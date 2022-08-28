@@ -13,6 +13,7 @@ export class HomePage implements OnInit {
   n4: number;
   n5: number;
   n6: number;
+  path: string[];
 
   constructor() {}
 
@@ -35,6 +36,64 @@ export class HomePage implements OnInit {
       })
     })();
   }
-  
 
+  solveClick() {
+    if(!(this.expected && this.n1 && this.n2 && this.n3 && this.n4 && this.n5 && this.n6)) {
+      return;
+    }
+
+    const numbers: number[] = [this.n1, this.n2, this.n3, this.n4, this.n5, this.n6];
+    let maxSteps = 3;
+
+    while(!this.path && maxSteps < 6) {
+      this.solveSummle(this.expected, numbers, maxSteps);
+      maxSteps++;
+    }
+  }
+  
+  solveSummle(expected, numbers, maxSteps = 0, steps = 0, path = [], result = 0) {
+    if(result == expected && (!maxSteps || path.length == maxSteps)) {
+        this.path = path;
+    }
+
+    if(steps < 5 && result != expected) {
+        for(let i = 0; i < numbers.length; i++) {
+            for(let j = 0; j < numbers.length; j++) {
+                if(j !== i) {
+                    const suma = numbers[i] + numbers[j]
+                    const numbersSuma = [...numbers].filter((_, ind) => i !== ind && j !== ind);
+                    numbersSuma.push(suma);
+                    const pathSuma = [...path];
+                    pathSuma.push(`${numbers[i]} + ${numbers[j]}`);
+                    this.solveSummle(expected, numbersSuma, maxSteps, steps + 1, pathSuma, suma);
+
+                    const resta = numbers[i] - numbers[j];
+                    if(resta > 0) {
+                        const numbersResta = [...numbers].filter((_, ind) => i !== ind && j !== ind);
+                        numbersResta.push(resta);
+                        const pathResta = [...path];
+                        pathResta.push(`${numbers[i]} - ${numbers[j]}`);
+                        this.solveSummle(expected, numbersResta, maxSteps, steps + 1, pathResta, resta);
+                    }
+
+                    const multiplicacion = numbers[i] * numbers[j];
+                    const numbersMultiplicacion = [...numbers].filter((_, ind) => i !== ind && j !== ind);
+                    numbersMultiplicacion.push(multiplicacion);
+                    const pathMultiplicacion = [...path];
+                    pathMultiplicacion.push(`${numbers[i]} * ${numbers[j]}`);
+                    this.solveSummle(expected, numbersMultiplicacion, maxSteps, steps + 1, pathMultiplicacion, multiplicacion);
+
+                    const division = numbers[i] / numbers[j];
+                    if(division % 1 === 0) {
+                        const numbersDivision = [...numbers].filter((_, ind) => i !== ind && j !== ind);
+                        numbersDivision.push(division);
+                        const pathDivision = [...path];
+                        pathDivision.push(`${numbers[i]} / ${numbers[j]}`);
+                        this.solveSummle(expected, numbersDivision, maxSteps, steps + 1, pathDivision, division);
+                    }
+                }
+            }
+        }
+    }
+}
 }
