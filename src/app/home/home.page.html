@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      SUMMLE <sub>SOLVER</sub>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,40 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">SUMMLE <sub>SOLVER</sub></ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="squareDiv centeredDiv margin-top-20">
+      <input type="number" class="innerInput" [(ngModel)]="expected">
+    </div>
+
+    <div class="numbersContainer">
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n1">
+      </span>
+
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n2">
+      </span>
+
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n3">
+      </span>
+
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n4">
+      </span>
+
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n5">
+      </span>
+
+      <span class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="n6">
+      </span>
+    </div>
+
   </div>
 </ion-content>

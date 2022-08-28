@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  expected: number;
+  n1: number;
+  n2: number;
+  n3: number;
+  n4: number;
+  n5: number;
+  n6: number;
 
   constructor() {}
 

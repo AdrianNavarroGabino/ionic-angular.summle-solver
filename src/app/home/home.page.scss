@@ -1,11 +1,5 @@
 #container {
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 #container strong {
@@ -24,4 +18,35 @@
 
 #container a {
   text-decoration: none;
+}
+
+ion-title {
+  text-align: center;
+}
+
+.squareDiv {
+  width: 15vw;
+  height: 15vw;
+  font-size: 120%;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.centeredDiv {
+  left: 50%;
+  display: inline-block;
+}
+
+.innerInput {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.numbersContainer {
+  height: 20vw;
+  display: flex;
+  justify-content: space-evenly;
 }
