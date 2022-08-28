@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   n5: number;
   n6: number;
   path: string[];
+  showProgress: boolean = false;
 
   constructor() {}
 
@@ -41,14 +42,20 @@ export class HomePage implements OnInit {
     if(!(this.expected && this.n1 && this.n2 && this.n3 && this.n4 && this.n5 && this.n6)) {
       return;
     }
+    this.showProgress = true;
+    this.path = null;
 
-    const numbers: number[] = [this.n1, this.n2, this.n3, this.n4, this.n5, this.n6];
-    let maxSteps = 3;
+    setTimeout(() => {
+      const numbers: number[] = [this.n1, this.n2, this.n3, this.n4, this.n5, this.n6];
+      let maxSteps = 3;
 
-    while(!this.path && maxSteps < 6) {
-      this.solveSummle(this.expected, numbers, maxSteps);
-      maxSteps++;
-    }
+      while(!this.path && maxSteps < 6) {
+        this.solveSummle(this.expected, numbers, maxSteps);
+        maxSteps++;
+      }
+
+      this.showProgress = false;
+    }, 1);
   }
   
   solveSummle(expected, numbers, maxSteps = 0, steps = 0, path = [], result = 0) {

@@ -48,10 +48,22 @@
       <ion-button expand="block" (click)="solveClick()">Solve</ion-button>
     </section>
 
+    <div [hidden]="!showProgress">
+      <ion-progress-bar type="indeterminate"></ion-progress-bar>
+    </div>
+
     <div *ngIf="path && path.length">
-      <ul class="no-decoration">
-        <li *ngFor="let p of path">{{ p }} = {{ p | evaluate }}</li>
-      </ul>
+        <div *ngFor="let p of path">
+          <span class="bigDiv">
+            <input class="innerInput" type="text" [value]="p">
+          </span>
+          <span>
+            =
+          </span>
+          <span>
+            {{ p | evaluate }}
+          </span>
+        </div>
     </div>
   </div>
 </ion-content>
