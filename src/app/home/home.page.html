@@ -53,15 +53,15 @@
     </div>
 
     <div *ngIf="path && path.length">
-        <div *ngFor="let p of path">
+        <div class="pathDiv" *ngFor="let p of path">
           <span class="bigDiv">
-            <input class="innerInput" type="text" [value]="p">
+            <input type="text" [value]="p">
           </span>
-          <span>
+          <span class="font-size-200">
             =
           </span>
           <span>
-            {{ p | evaluate }}
+            <input class="squareDiv" type="text" [value]="p | evaluate">
           </span>
         </div>
     </div>

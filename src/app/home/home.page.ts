@@ -19,6 +19,12 @@ export class HomePage implements OnInit {
   constructor() {}
 
   ngOnInit() {
+
+    (async () => {
+      const response = await fetch("https://cors-anywhere.herokuapp.com/corsdemo?accessRequest=5217e26f73c495f35b51892ba6949fb7a20f5bd16240f460087b5f8bf705b471");
+      console.log(response.text());
+    })();
+
     (async () => {
       const response = await fetch('https://cors-anywhere.herokuapp.com/https://summle.net/');
       const text = await response.text();
