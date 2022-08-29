@@ -14,56 +14,60 @@
   </ion-header>
 
   <div id="container">
-    <div class="squareDiv centeredDiv margin-top-20">
-      <input type="number" class="innerInput" [(ngModel)]="expected">
+    <div class="inputDiv">
+      <div class="squareDiv centeredDiv margin-top-20">
+        <input type="number" class="innerInput" [(ngModel)]="expected">
+      </div>
+
+      <div class="numbersContainer">
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n1">
+        </span>
+
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n2">
+        </span>
+
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n3">
+        </span>
+
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n4">
+        </span>
+
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n5">
+        </span>
+
+        <span class="squareDiv centeredDiv margin-top-20">
+          <input type="number" class="innerInput" [(ngModel)]="n6">
+        </span>
+      </div>
+
+      <section class="margin-top-20">
+        <ion-button expand="block" (click)="solveClick()">Solve</ion-button>
+      </section>
     </div>
 
-    <div class="numbersContainer">
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n1">
-      </span>
+    <div class="resultDiv">
+      <div [hidden]="!showProgress">
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </div>
 
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n2">
-      </span>
-
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n3">
-      </span>
-
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n4">
-      </span>
-
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n5">
-      </span>
-
-      <span class="squareDiv centeredDiv margin-top-20">
-        <input type="number" class="innerInput" [(ngModel)]="n6">
-      </span>
-    </div>
-
-    <section class="margin-top-20">
-      <ion-button expand="block" (click)="solveClick()">Solve</ion-button>
-    </section>
-
-    <div [hidden]="!showProgress">
-      <ion-progress-bar type="indeterminate"></ion-progress-bar>
-    </div>
-
-    <div *ngIf="path && path.length">
-        <div class="pathDiv" *ngFor="let p of path">
-          <span class="bigDiv">
-            <input type="text" [value]="p">
-          </span>
-          <span class="font-size-200">
-            =
-          </span>
-          <span>
-            <input class="squareDiv" type="text" [value]="p | evaluate">
-          </span>
-        </div>
+      <div *ngIf="path && path.length">
+          <div class="pathDiv" *ngFor="let p of path">
+            <span class="bigDiv">
+              <input type="text" [value]="p">
+            </span>
+            <span class="font-size-200">
+              =
+            </span>
+            <span>
+              <input class="squareDiv" type="text" [value]="p | evaluate">
+            </span>
+          </div>
+      </div>
     </div>
   </div>
 </ion-content>
