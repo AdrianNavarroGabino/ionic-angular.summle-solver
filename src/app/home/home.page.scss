@@ -30,10 +30,55 @@ ion-title {
   font-size: 120%;
 }
 
-.resultInput {
-  width: 20vw;
-  height: 15vw;
-  font-size: 120%;
+@media (orientation: portrait) {
+  .resultInput {
+    width: 20vw;
+    height: 15vw;
+    font-size: 120%;
+  }
+
+  .numbersContainer {
+    height: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .bigDiv{
+    width: 35vw;
+    height: 15vw;
+    font-size: 120%;
+  }
+
+  .inputDiv {
+    height: 35vh;
+  }
+
+  .resultDiv {
+    height: 48vh;
+  }
+
+  .pathInput {
+    width: 35vw;
+  }
+}
+
+@media (orientation: landscape) {
+  .resultInput {
+    width: 20vh;
+    height: 15vh;
+    font-size: 120%;
+  }
+
+  .numbersContainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .bigDiv{
+    width: 35vh;
+    height: 15vh;
+    font-size: 120%;
+  }
 }
 
 .margin-top-20 {
@@ -51,20 +96,8 @@ ion-title {
   text-align: center;
 }
 
-.numbersContainer {
-  height: 20vw;
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .no-decoration {
   list-style: none;
-}
-
-.bigDiv{
-  width: 35vw;
-  height: 15vw;
-  font-size: 120%;
 }
 
 .pathDiv span input {
@@ -78,16 +111,4 @@ ion-title {
 
 .pathDiv {
   margin-top: 1rem;
-}
-
-.inputDiv {
-  height: 35vh;
-}
-
-.resultDiv {
-  height: 48vh;
-}
-
-.pathInput {
-  width: 35vw;
 }
