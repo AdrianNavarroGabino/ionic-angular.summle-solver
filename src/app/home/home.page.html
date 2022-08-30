@@ -58,13 +58,13 @@
       <div *ngIf="path && path.length">
           <div class="pathDiv" *ngFor="let p of path">
             <span class="bigDiv">
-              <input type="text" [value]="p">
+              <input class="pathInput" readonly type="text" [value]="p">
             </span>
             <span class="font-size-200">
               =
             </span>
             <span>
-              <input class="squareDiv" type="text" [value]="p | evaluate">
+              <input readonly class="resultInput" type="text" [value]="p | evaluate">
             </span>
           </div>
       </div>

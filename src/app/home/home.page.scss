@@ -30,6 +30,12 @@ ion-title {
   font-size: 120%;
 }
 
+.resultInput {
+  width: 20vw;
+  height: 15vw;
+  font-size: 120%;
+}
+
 .margin-top-20 {
   margin-top: 20px;
 }
@@ -56,7 +62,7 @@ ion-title {
 }
 
 .bigDiv{
-  width: 40vw;
+  width: 35vw;
   height: 15vw;
   font-size: 120%;
 }
@@ -75,9 +81,13 @@ ion-title {
 }
 
 .inputDiv {
-  height: 40vh;
+  height: 35vh;
 }
 
 .resultDiv {
   height: 48vh;
+}
+
+.pathInput {
+  width: 35vw;
 }
